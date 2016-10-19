@@ -14,27 +14,16 @@ import static io.undertow.Handlers.resource;
 import static io.undertow.UndertowOptions.ENABLE_HTTP2;
 import static io.undertow.UndertowOptions.ENABLE_SPDY;
 
-/**
- * Created by me on 10/19/16.
- */
+
 public class Server {
+
     public static void main(String[] args) {
 
         int httpPort = 8080;
 
-
-        File c = new File("./src/main/java");
-        //File c = new File(WebServer.class.getResource("/").getPath());
-        String cp = c.getAbsolutePath().replace("./", "");
-
-//            if (cp.contains("web/web")) //happens if run from web/ directory
-//                cp = cp.replace("web/web", "web");
-
-        Path rpath = Paths.get(
-                //System.getProperty("user.home")
-                cp
-        );
-        PathResourceManager resourcePath = new PathResourceManager(rpath, 0, true, true);
+        PathResourceManager resourcePath = new PathResourceManager(Paths.get(
+                new File("./src/main/java").getAbsolutePath().replace("./", "")
+        ), 0, true, true);
 
 
         Undertow.builder()
@@ -57,6 +46,5 @@ public class Server {
                 .build().start();
 
     }
-
 
 }

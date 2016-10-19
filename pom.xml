@@ -43,19 +43,7 @@
             </exclusions>
         </dependency>
 
-        <!-- Servlet 3.1 specification -->
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.ow2.asm</groupId>
-                    <artifactId>asm-all</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
+
 
         <!-- https://mvnrepository.com/artifact/io.undertow/undertow-websockets-jsr -->
         <dependency>
